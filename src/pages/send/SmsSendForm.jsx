@@ -25,6 +25,8 @@ import { sendSmsSchema } from "../validation/Validation";
 
 const SmsSendForm = () => {
   const [sms, setSMS] = useState();
+    const [sms1, setSMS1] = useState();
+
   const [valueOption, setValueOption] = useState([]);
   const [sender, setSender] = useState("Lana Line");
   const user = JSON.parse(localStorage.getItem("user"));
@@ -167,13 +169,23 @@ const SmsSendForm = () => {
                     id="demo-simple-select-required"
                     value={sms}
                     label="SMS Title *"
-                    onChange={(event) => setSMS(event.target.value)}
+                    onChange={(event) => {setSMS1(event.target.value)}}
                   >
                     {valueOption.map((value) => (
                       <MenuItem value={value.value}>{value.label}</MenuItem>
                     ))}
                   </Select>
+                  
                 </FormControl>
+
+              </Grid>
+              <Grid item xs={12}>
+                <TextField error={errors.sms && touched.sms}  maxRows={1} Width={"50px"}
+                  helperText={!errors.sms || !touched.sms ? "" : errors.sms}
+                  name="price" id="sms"
+                  type={"text"} value={""} onBlur={(event)=>{SetSMS(sms1+" "+event.target.value+" شيكل")
+
+                  }}  label="SMS Message" variant="outlined" />
               </Grid>
               <Grid item xs={12}>
                 <Item
