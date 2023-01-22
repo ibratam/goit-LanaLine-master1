@@ -180,9 +180,9 @@ const SmsSendForm = () => {
 
               </Grid>
               <Grid item xs={12}>
-                <TextField error={errors.sms && touched.sms}  maxRows={1} Width={"50px"}
-                  helperText={!errors.sms || !touched.sms ? "" : errors.sms}
-                  name="price" id="sms"
+                <TextField error={errors.sms1 && touched.sms1}  maxRows={1} Width={"50px"}
+                  helperText={!errors.sms1 || !touched.sms1 ? "" : errors.sms1}
+                  name="price" id="sms1"
                   type={"number"}  onBlur={(event)=>{setSMS(sms1+" "+event.target.value+" شيكل شامل التوصيل")
 
                   }}  label="price" variant="outlined" />
