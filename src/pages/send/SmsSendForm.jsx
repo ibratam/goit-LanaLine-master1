@@ -183,7 +183,7 @@ const SmsSendForm = () => {
                 <TextField error={errors.sms && touched.sms}  maxRows={1} Width={"50px"}
                   helperText={!errors.sms || !touched.sms ? "" : errors.sms}
                   name="price" id="sms"
-                  type={"text"} value={""} onBlur={(event)=>{SetSMS(sms1+" "+event.target.value+" شيكل")
+                  type={"text"} value={""} onBlur={(event)=>{setSMS(sms1+" "+event.target.value+" شيكل")
 
                   }}  label="SMS Message" variant="outlined" />
               </Grid>
