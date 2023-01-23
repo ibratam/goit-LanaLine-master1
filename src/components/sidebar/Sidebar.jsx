@@ -12,7 +12,7 @@ import PeopleIcon from '@mui/icons-material/People';
 const Sidebar = () => {
   const { dispatch } = useContext(AuthContext);
   const user = JSON.parse(localStorage.getItem('user'));
-
+  
   return (
     <div className="sidebar">
       <div className="top">
@@ -46,13 +46,14 @@ const Sidebar = () => {
 
           {user.email === "admin@lanaline.ps" && <Link to="/add" style={{ textDecoration: "none" }}>
             <li>
+              <p></p>
               <AddBoxIcon className="icon" />
-              <span>Add SMS</span>
+              <span>Add SMS </span>
             </li>
           </Link>}
 
           <p className="title">Settings</p>
-          {user.email === "admin@lanaline.ps" && <Link to="/users" style={{ textDecoration: "none" }}>
+          {user.role == 0 && <Link to="/users" style={{ textDecoration: "none" }}>
             <li>
               <PeopleIcon className="icon" />
               <span>Users</span>

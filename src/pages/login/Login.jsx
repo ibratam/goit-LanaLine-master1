@@ -4,7 +4,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "../../firebase";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext"
-import { doc } from "firebase/firestore";
+import { doc, getDoc, getDocFromServer, getDocs } from "firebase/firestore";
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
@@ -22,7 +22,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const navitage = useNavigate()
   const { dispatch } = useContext(AuthContext)
-
+  
   const handleLogin = (e) => {
     e.preventDefault();
 
@@ -32,6 +32,7 @@ const Login = () => {
         const user = userCredential.user;
         const docRef = doc(db, "users", user.uid);
         localStorage.setItem("userInfo", JSON.stringify(docRef));
+        
         dispatch({ type: "LOGIN", payload: user })
         navitage("/")
       })

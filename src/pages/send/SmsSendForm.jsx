@@ -25,7 +25,7 @@ import { sendSmsSchema } from "../validation/Validation";
 
 const SmsSendForm = () => {
   const [sms, setSMS] = useState();
-    const [sms1, setSMS1] = useState();
+  const [sms1, setSMS1] = useState();
 
   const [valueOption, setValueOption] = useState([]);
   const [sender, setSender] = useState("Lana Line");
@@ -68,7 +68,7 @@ const SmsSendForm = () => {
               "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
             );
             myHeaders.append("cache-control", "max-age=0");
-            myHeaders.append("origin", "http://185.193.66.128:3000");
+            myHeaders.append("origin", "http://185.193.66.128");
             myHeaders.append("Host", "sms.htd.ps");
             myHeaders.append("Access-Control-Allow-Origin", "*");
             myHeaders.append(
@@ -169,7 +169,8 @@ const SmsSendForm = () => {
                     id="demo-simple-select-required"
                     value={sms}
                     label="SMS Title *"
-                    onChange={(event) => {setSMS1(event.target.value)}}
+                    onChange={(event) => {setSMS(event.target.value)
+                      setSMS1(event.target.value)}}
                   >
                     {valueOption.map((value) => (
                       <MenuItem value={value.value}>{value.label}</MenuItem>
