@@ -53,7 +53,7 @@ const Sidebar = () => {
           </Link>}
 
           <p className="title">Settings</p>
-          {user.role == 0 && <Link to="/users" style={{ textDecoration: "none" }}>
+          {user.email === "admin@lanaline.ps" && <Link to="/users" style={{ textDecoration: "none" }}>
             <li>
               <PeopleIcon className="icon" />
               <span>Users</span>
