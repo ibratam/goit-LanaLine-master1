@@ -27,8 +27,8 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 
 
 const SmsSendForm = () => {
-  const [sms, setSMS] = useState("");
-  const [sms1, setSMS1] = useState("");
+  const [sms, setSMS] = useState();
+  const [sms1, setSMS1] = useState();
   
   const [price, setPrice] = useState("");
   const [checked, setChecked] = useState(true);
@@ -182,8 +182,8 @@ const SmsSendForm = () => {
                     id="demo-simple-select-required"
                     value={sms}
                     label="SMS Title *"
-                    onChange={(event) => setSMS1(event.target.value)
-                      }
+                    onChange={(event) => {setSMS1(event.target.value)
+                      setSMS(event.target.value)}}
                   >
                     {valueOption.map((value) => (
                       <MenuItem value={value.value}>{value.label}</MenuItem>
@@ -224,7 +224,7 @@ const SmsSendForm = () => {
                 >
                   <div className="message-filed">
                     <div className="message-header">Selected Message:</div>
-                    <div className="message-sms">{sms!==""?smshandle():"يرجى اختيار رسالة"}</div>
+                    <div className="message-sms">{sms!==undefined?smshandle():"يرجى اختيار رسالة"}</div>
                   </div>
                 </Item>
               </Grid>
@@ -240,7 +240,7 @@ const SmsSendForm = () => {
                   type="submit"
                   variant="contained"
                   endIcon={<SendIcon />}
-                  disabled={sms===""?true:false}
+                  disabled={sms===undefined?true:false}
                 >
                   Send SMS
                 </Button>
