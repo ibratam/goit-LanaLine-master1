@@ -28,6 +28,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 
 const SmsSendForm = () => {
   const [sms, setSMS] = useState("");
+  const [sms1, setSMS1] = useState("");
   
   const [price, setPrice] = useState("");
   const [checked, setChecked] = useState(true);
@@ -46,8 +47,9 @@ const SmsSendForm = () => {
     color: theme.palette.text.secondary,
   }));
   const smshandle =()=>{
-    return(sms+" "+price+(price===""?"":(checked ?" شيكل شامل التوصيل":" شيكل غير شامل التوصيل")))
-  }
+    setSMS(sms1+" "+price+(price===""?"":(checked ?" شيكل شامل التوصيل":" شيكل غير شامل التوصيل")))
+
+    return sms }
   
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
