@@ -10,10 +10,6 @@ services:
       dockerfile: Dockerfile
     
     ports:
-      - "99:3300"
+      - "99:8080"
    
-    volumes:
-      - "/app"
-      - "/app/node_modules"
-    environment:
-      - NODE_ENV=production
+    
