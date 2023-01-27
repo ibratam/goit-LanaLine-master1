@@ -10,6 +10,8 @@ services:
       dockerfile: Dockerfile
     
     ports:
-      - "99:8080"
+      - "99:443"
+      -"98:80"
+      
    
     
