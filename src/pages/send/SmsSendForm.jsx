@@ -182,7 +182,7 @@ const SmsSendForm = () => {
                     id="demo-simple-select-required"
                     value={sms}
                     label="SMS Title *"
-                    onChange={(event) => setSMS(event.target.value)
+                    onChange={(event) => setSMS1(event.target.value)
                       }
                   >
                     {valueOption.map((value) => (
