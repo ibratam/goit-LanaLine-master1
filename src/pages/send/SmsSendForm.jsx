@@ -22,15 +22,22 @@ import Paper from "@mui/material/Paper";
 import SendIcon from "@mui/icons-material/Send";
 import { Formik } from "formik";
 import { sendSmsSchema } from "../validation/Validation";
+import Checkbox from '@mui/material/Checkbox';
+import FormControlLabel from '@mui/material/FormControlLabel';
+
 
 const SmsSendForm = () => {
-  const [sms, setSMS] = useState();
-  const [sms1, setSMS1] = useState();
-
+  const [sms, setSMS] = useState("");
+  
+  const [price, setPrice] = useState("");
+  const [checked, setChecked] = useState(true);
   const [valueOption, setValueOption] = useState([]);
   const [sender, setSender] = useState("Lana Line");
   const user = JSON.parse(localStorage.getItem("user"));
+  
 
+  
+  
   const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
     ...theme.typography.body2,
@@ -38,6 +45,10 @@ const SmsSendForm = () => {
     textAlign: "center",
     color: theme.palette.text.secondary,
   }));
+  const smshandle =()=>{
+    return(sms+" "+price+(price===""?"":(checked ?" شيكل شامل التوصيل":" شيكل غير شامل التوصيل")))
+  }
+  
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
@@ -169,8 +180,8 @@ const SmsSendForm = () => {
                     id="demo-simple-select-required"
                     value={sms}
                     label="SMS Title *"
-                    onChange={(event) => {setSMS(event.target.value)
-                      setSMS1(event.target.value)}}
+                    onChange={(event) => setSMS(event.target.value)
+                      }
                   >
                     {valueOption.map((value) => (
                       <MenuItem value={value.value}>{value.label}</MenuItem>
@@ -184,10 +195,22 @@ const SmsSendForm = () => {
                 <TextField error={errors.sms1 && touched.sms1}  maxRows={1} Width={"50px"}
                   helperText={!errors.sms1 || !touched.sms1 ? "" : errors.sms1}
                   name="price" id="sms1"
-                  type={"number"}  onBlur={(event)=>{setSMS(sms1+" "+event.target.value+" شيكل شامل التوصيل")
+                  type={"number"}  onChange={(event)=>{
+                    setPrice(event.target.value)
 
-                  }}  label="price" variant="outlined" />
+                   
+                  }                   
+                  }  label="price" variant="outlined" />
+              
+              
+      
+                
               </Grid>
+              <Grid item xs={12}>
+                <FormControlLabel control={<Checkbox  onChange={ ()=> 
+                      setChecked(!checked)}
+                      checked={checked} />} 
+                  label = "شامل التوصيل" /></Grid>
               <Grid item xs={12}>
                 <Item
                   style={{
@@ -199,7 +222,7 @@ const SmsSendForm = () => {
                 >
                   <div className="message-filed">
                     <div className="message-header">Selected Message:</div>
-                    <div className="message-sms">{sms}</div>
+                    <div className="message-sms">{sms!==""?smshandle():"يرجى اختيار رسالة"}</div>
                   </div>
                 </Item>
               </Grid>
@@ -215,6 +238,7 @@ const SmsSendForm = () => {
                   type="submit"
                   variant="contained"
                   endIcon={<SendIcon />}
+                  disabled={sms===""?true:false}
                 >
                   Send SMS
                 </Button>

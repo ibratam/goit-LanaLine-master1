@@ -55,6 +55,7 @@ const Sidebar = () => {
           <p className="title">Settings</p>
           {user.email === "admin@lanaline.ps" && <Link to="/users" style={{ textDecoration: "none" }}>
             <li>
+              <p></p>
               <PeopleIcon className="icon" />
               <span>Users</span>
             </li>
