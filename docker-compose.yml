@@ -3,17 +3,17 @@ version: "3.7"
 services:
   sms:
     # service 1 container name
-    container_name: react-proj
+    container_name: react-prod
     build:
      
       context: .
       dockerfile: Dockerfile
     
     ports:
-      - "92:3000"
+      - "99:3000"
    
     volumes:
       - "/app"
       - "/app/node_modules"
     environment:
-      - NODE_ENV=development
+      - NODE_ENV=production
