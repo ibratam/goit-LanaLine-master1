@@ -1,9 +1,9 @@
 version: "3.7"
 
 services:
-  sms:
+  fronend:
     # service 1 container name
-    container_name: react-prod
+    container_name: frontend
     build:
      
       context: .
