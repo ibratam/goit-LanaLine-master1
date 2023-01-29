@@ -1,4 +1,4 @@
-FROM node AS prod
+FROM node:alpine AS prod
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
@@ -8,6 +8,7 @@ RUN npm run build
 
 FROM nginx:alpine 
 WORKDIR /usr/share/nginx/html
+RUN rm -rf ./*
 COPY --from=prod /app/build .
 EXPOSE 99
 # run nginx with global directives and daemon off
