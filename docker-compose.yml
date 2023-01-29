@@ -9,8 +9,7 @@ services:
       context: .
     ports:
       - "99:80"
-    volumes:
-      - ./src:/usr/share/nginx/html
+    
       
    
     
