@@ -4,15 +4,12 @@ services:
   fronend:
     # service 1 container name
     container_name: frontend
+    image: docker-react-i
     build:
-     
       context: .
-      dockerfile: Dockerfile
-    
     ports:
-      
       - "98:80"
-      - "97:3000"
+      
       
    
     
