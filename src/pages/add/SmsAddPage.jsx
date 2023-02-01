@@ -9,7 +9,7 @@ const SmsAddPage = () => {
     <div className="list">
       <Sidebar />
       <div className="listContainer">
-        <Navbar />
+       
         <SmsAddForm />
         <AddDatatable />
       </div>
