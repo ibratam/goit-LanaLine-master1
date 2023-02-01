@@ -231,7 +231,7 @@ const SmsSendForm = () => {
               <Grid item xs={12}>
                 <Button
                   style={{
-                    backgroundColor: "#f48fb1",
+                    backgroundColor: "#fcc4b7",
                     color: "white",
                     fontWeight: "bold",
                     fontSize: "18px",
