@@ -61,7 +61,7 @@ const SmsAddForm = () => {
                   type={"text"} value={values.sms} onBlur={handleBlur} onChange={handleChange} label="SMS Message" variant="outlined" />
               </Grid>
               <Grid item xs={12}>
-                <Button style={{ backgroundColor: "#f48fb1", color: "white", fontWeight: 'bold', fontSize: '18px' }} fullWidth type="submit"
+                <Button style={{ backgroundColor: "#fcc4b7", color: "white", fontWeight: 'bold', fontSize: '18px' }} fullWidth type="submit"
                   variant="contained" endIcon={<AddIcon />}>Add SMS Message</Button>
               </Grid>
             </Grid>
