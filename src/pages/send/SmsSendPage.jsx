@@ -9,7 +9,7 @@ const SmsSendPage = () => {
     <div className="list">
       <Sidebar/>
       <div className="listContainer">
-        <Navbar />
+      
         <SmsSendForm /> 
         <SendDatatable />
       </div>
