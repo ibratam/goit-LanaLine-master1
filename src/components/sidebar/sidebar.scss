@@ -2,9 +2,9 @@
   flex: 1;
   border-right: 0.5px solid rgb(230, 227, 227);
   min-height: 100vh;
-  background-color: white;
+  background-color: #fcc4b7;
   max-width: 200px;
-
+  
   .top {
     height: 50px;
     display: flex;
@@ -14,13 +14,13 @@
     .logo {
       font-size: 20px;
       font-weight: bold;
-      color: #6439ff;
+      color: #5d5d5f;
     }
   }
 
   hr {
     height: 0;
-    border: 0.5px solid rgb(230, 227, 227);
+    border: 0.5px solid #5d5d5f;
   }
 
   .center {
@@ -51,7 +51,7 @@
 
         .icon {
           font-size: 18px;
-          color: #7451f8;
+          color: #5d5d5f;
         }
 
         span{
@@ -78,7 +78,7 @@
           margin: 5px;
 
           &:nth-child(1){
-              background-color: whitesmoke;
+              background-color:#fcc4b7;
           }
           &:nth-child(2){
               background-color: #333;
@@ -88,4 +88,7 @@
           }
       }
   }
-}
+  
+
+  }
+
