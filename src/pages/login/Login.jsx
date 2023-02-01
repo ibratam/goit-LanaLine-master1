@@ -48,7 +48,7 @@ const Login = () => {
   return (
 
     <ThemeProvider theme={theme}>
-      <Grid container component="main" sx={{ height: '100vh' }}>
+      <Grid container component="main"  sx={{ height: '100vh' }}>
         <CssBaseline />
         <Grid
           item
@@ -56,16 +56,17 @@ const Login = () => {
           sm={4}
           md={7}
           sx={{
-            backgroundImage: `url(${process.env.PUBLIC_URL + '/images/lana.jpg'})`,
+            backgroundImage: `url(${process.env.PUBLIC_URL + '/images/Tabletlogin.gif'})`,
             backgroundRepeat: 'no-repeat',
             backgroundColor: (t) =>
               t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
             backgroundSize: 'cover',
             backgroundPosition: 'center',
+           
 
           }}
         />
-        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square backgroundColor="#fcc4b7">
           <Box
             sx={{
               my: 12,
@@ -83,14 +84,14 @@ const Login = () => {
 
             <form onSubmit={handleLogin}>
               <Typography align="center">
-                <img className="gif" src={gif} alt="" />
+                <img className="gif" src={"/images/lana.jpg"} alt="" />
               </Typography>
 
               <Typography
                 fontSize={'35px'}
                 component="h1"
                 variant="h10" align="center">
-                LanaLine Login
+                
               </Typography>
 
 
