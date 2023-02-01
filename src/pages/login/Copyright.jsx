@@ -19,7 +19,7 @@ export const Copyright = (props) => {
       <Link color="#890ab4" href="https://www.goit.ps/">
         <img
           width={'120px'}
-          src={process.env.PUBLIC_URL + '/images/goIt.jpg'}
+          src={ 'https://img2.gimm.io/50ea97bc-de53-4ab0-af72-8a744393a050/-/resize/300x200/img.png'}
         />
       </Link>{' '}
       {/* {new Date().getFullYear()} */}
