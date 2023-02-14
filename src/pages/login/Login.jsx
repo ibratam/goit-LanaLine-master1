@@ -83,8 +83,9 @@ const Login = () => {
 
 
             <form onSubmit={handleLogin}>
-              <Typography align="center">
-                <img className="gif" src={"/images/lana.jpg"} alt="" />
+            
+              <Typography align="center" maxWidth={'350px'}>
+                <img className="gif" src="/images/lana.jpg" width={'fill'} alt="" />
               </Typography>
 
               <Typography
@@ -94,6 +95,7 @@ const Login = () => {
                 
               </Typography>
 
+              
 
               <TextField
                 margin="normal"
