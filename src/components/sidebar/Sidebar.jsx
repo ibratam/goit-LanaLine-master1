@@ -8,6 +8,8 @@ import { AuthContext } from "../../context/AuthContext";
 import SendIcon from '@mui/icons-material/Send';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import PeopleIcon from '@mui/icons-material/People';
+import Typography from '@mui/material/Typography';
+import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 
 const Sidebar = () => {
   const { dispatch } = useContext(AuthContext);
@@ -16,9 +18,13 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="top">
-        <Link to="/" style={{ textDecoration: "none" }}>
-          <span className="logo">LanaLine</span>
-        </Link>
+        <Grid2><img src= {process.env.PUBLIC_URL+"/images/lana.jpg"} width={"200px"} height={'auto'}/></Grid2>
+      
+
+          
+              
+
+        
       </div>
       <hr />
       <div className="center">
