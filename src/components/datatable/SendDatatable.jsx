@@ -1,15 +1,18 @@
 import "./datatable.scss";
-import { DataGrid } from "@mui/x-data-grid";
-import { smsMessageColumns, userColumns } from "../../datatablesource";
+import { DataGrid, GridToolbar} from '@mui/x-data-grid';
+import { smsMessageColumns } from "../../datatablesource";
 import { useEffect, useState } from "react";
 import {
   collection,
-  onSnapshot,orderBy
+  onSnapshot,
 } from "firebase/firestore";
 import { db } from "../../firebase";
 
+
+
 const SendDatatable = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState([]); 
+  const user = JSON.parse(localStorage.getItem("user"));
 
   useEffect(() => {
     // LISTEN (REALTIME)
@@ -19,7 +22,8 @@ const SendDatatable = () => {
         let list = snapShot.docs.map(doc=>{
           return {...doc.data(),id: doc.id}
         })
-        setData(list);
+
+        user.email != 'admin@palcoll.ps'? setData(list.filter((item) => item.email === user.email)):setData(list);
       },
       (error) => {
         console.log('error');
@@ -37,8 +41,13 @@ const SendDatatable = () => {
         className="datagrid"
         rows={data}
         columns={smsMessageColumns}
-        pageSize={100}
+        pageSize={99}
         rowsPerPageOptions={[9]}
+        components={{
+          Toolbar: GridToolbar,
+        }}
+        
+        
         sortingOrder = {['asc', 'desc', null]}
         initialState={{
           sorting: {
