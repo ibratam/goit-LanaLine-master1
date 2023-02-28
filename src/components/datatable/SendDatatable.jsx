@@ -23,7 +23,7 @@ const SendDatatable = () => {
           return {...doc.data(),id: doc.id}
         })
 
-        user.email != 'admin@palcoll.ps'? setData(list.filter((item) => item.email === user.email)):setData(list);
+        user.email != 'admin@lanaline.ps'? setData(list.filter((item) => item.email === user.email)):setData(list);
       },
       (error) => {
         console.log('error');
